@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+    <div class="box">
+        <form action="index.php" method="post">
+            <fieldset>
+                <legend><b>Formulário</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+                <fieldset class="radio-group">
+                    <legend>Série:</legend>
+                    <input type="radio" id="1º ano" name="série" value="1º ano" required>
+                    <label for="1º ano">1º ano</label>
+                    <br>
+                    <input type="radio" id="2º ano" name="série" value="2º ano" required>
+                    <label for="2º ano">2º ano</label>
+                    <br>
+                    <input type="radio" id="3º ano" name="série" value="3º ano" required>
+                    <label for="3º ano">3º ano</label>
+                    <br>
+                    <input type="radio" id="4º ano" name="série" value="4º ano" required>
+                    <label for="4º ano">4º ano</label>
+                    <br>
+                    <input type="radio" id="5º ano" name="série" value="5º ano" required>
+                    <label for="5º ano">5º ano</label>
+                </fieldset>
+                <br><br>
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+                <div class="inputBox">
+                    <input type="text" name="endereço" id="endereço" class="inputUser" required>
+                    <label for="endereço" class="labelInput">Endereço</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+                <br><br>
+                <input type="submit" name="submit" id="submit">
+            </fieldset>
+        </form>
+        <br>
+        <a href="pagina_teste.html">Voltar para a Página Inicial</a>
+    </div>
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Adiciona um alerta antes do envio
+            alert('Enviando formulário...');
+
+            // Envia o formulário manualmente
+            this.submit();
+        });
+
+        if (typeof formSuccess !== 'undefined') {
+            if (formSuccess) {
+                alert('Formulário enviado com sucesso!');
+            } else {
+                alert('Erro ao enviar o formulário: ' + errorMessage);
+            }
+            window.location.href = "pagina_teste.html"; // Redireciona para a página inicial
+        }
+    </script>
+</body>
+
+</html>
